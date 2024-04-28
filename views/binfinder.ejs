@@ -183,13 +183,7 @@
                             </div>
                            
                             
-                            <div class="feature-archive">
-                           
-                            <a href=""><i class="fa-solid fa-magnifying-glass-chart"></i></a>
-                            <a href=""><i class="fa-solid fa-wheat-awn"></i></a>
-                            <a href=""><i class="fa-solid fa-trash"></i></a>
-                            
-                            </div>
+                          
                             
                         </div>
                         
@@ -206,13 +200,7 @@
                           <canvas id="ground"></canvas>
                         </div>
                         
-                        <div class="feature-archive">
                        
-                        <a href=""><i class="fa-solid fa-magnifying-glass-chart"></i></a>
-                        <a href=""><i class="fa-solid fa-wheat-awn"></i></a>
-                        <a href=""><i class="fa-solid fa-trash"></i></a>
-                        
-                        </div>
                         
                     </div>
                     
@@ -229,13 +217,7 @@
                       <canvas id="portico"></canvas>
                     </div>
                     
-                    <div class="feature-archive">
-                   
-                    <a href=""><i class="fa-solid fa-magnifying-glass-chart"></i></a>
-                    <a href=""><i class="fa-solid fa-wheat-awn"></i></a>
-                    <a href=""><i class="fa-solid fa-trash"></i></a>
-                    
-                    </div>
+                 
                     
                 </div>
                 
@@ -253,13 +235,7 @@
                   <canvas id="library"></canvas>
                 </div>
                 
-                <div class="feature-archive">
-               
-                <a href=""><i class="fa-solid fa-magnifying-glass-chart"></i></a>
-                <a href=""><i class="fa-solid fa-wheat-awn"></i></a>
-                <a href=""><i class="fa-solid fa-trash"></i></a>
                 
-                </div>
                 
             </div>
             
@@ -276,13 +252,6 @@
             </div>
            
             
-            <div class="feature-archive">
-           
-            <a href=""><i class="fa-solid fa-magnifying-glass-chart"></i></a>
-            <a href=""><i class="fa-solid fa-wheat-awn"></i></a>
-            <a href=""><i class="fa-solid fa-trash"></i></a>
-            
-            </div>
             
         </div>
         
@@ -370,10 +339,10 @@ if (showdata.style.display === 'none') {
     let unoccupied = 100 - `<%= canteen %>`;
      var xValues = ["Occupied", "unoccupied"];
     var yValues1 = [`<%= canteen %>`, unoccupied];
-    var barColors = ["rgb(130, 10, 10)", "rgb(5, 104, 79)"];
+    var barColors = ["rgb(221, 87, 70)", "rgb(65, 176, 110)"];
     
     new Chart("canteen", {
-      type: "bar",
+      type: "doughnut",
       data: {
         labels: xValues,
         datasets: [{
@@ -392,10 +361,10 @@ if (showdata.style.display === 'none') {
     let unoccupied2 = 100 - `<%= ground %>`;
 
     var yValues2 = [`<%= ground %>`, unoccupied2];
-    var barColors = ["rgb(130, 10, 10)", "rgb(5, 104, 79)"];
+    var barColors = ["rgb(221, 87, 70)", "rgb(65, 176, 110)"];
     
     new Chart("ground", {
-      type: "bar",
+      type: "doughnut",
       data: {
         labels: xValues,
         datasets: [{
@@ -414,10 +383,10 @@ if (showdata.style.display === 'none') {
     let unoccupied3 = 100 - `<%= portico %>`;
    
     var yValues3 = [`<%= portico %>`, unoccupied3];
-    var barColors = ["rgb(130, 10, 10)", "rgb(5, 104, 79)"];
+    var barColors = ["rgb(221, 87, 70)", "rgb(65, 176, 110)"];
     
     new Chart("portico", {
-      type: "bar",
+      type: "doughnut",
       data: {
         labels: xValues,
         datasets: [{
@@ -435,10 +404,10 @@ if (showdata.style.display === 'none') {
     });
     let unoccupied4 = 100 - `<%= library %>`;
     var yValues4 = [`<%= library %>`, unoccupied4];
-    var barColors = ["rgb(130, 10, 10)", "rgb(5, 104, 79)"];
+    var barColors = ["rgb(221, 87, 70)", "rgb(65, 176, 110)"];
     
     new Chart("library", {
-      type: "bar",
+      type: "doughnut",
       data: {
         labels: xValues,
         datasets: [{
@@ -456,10 +425,10 @@ if (showdata.style.display === 'none') {
     });
     let unoccupied5 = 100 - `<%= auditorium %>`;
     var yValues5 = [`<%= auditorium %>`, unoccupied5];
-    var barColors = ["rgb(130, 10, 10)", "rgb(5, 104, 79)"];
+    var barColors = ["rgb(221, 87, 70)", "rgb(65, 176, 110)"];
     
     new Chart("auditorium", {
-      type: "bar",
+      type: "doughnut",
       data: {
         labels: xValues,
         datasets: [{
