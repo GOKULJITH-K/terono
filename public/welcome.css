@@ -911,14 +911,14 @@ form .btn2:hover{
         justify-content: space-around;
         margin: 25px 15px;
         padding: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
         
         
     }
     .visit-schedule{
         display: grid;
         grid-template-columns: auto 60%;
-        width: 300px;
+        width: 350px;
         padding: 5px;
       
     }
