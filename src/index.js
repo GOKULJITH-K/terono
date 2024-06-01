@@ -7,8 +7,8 @@ const multer =require("multer");
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const port=process.env.PORT || 3000 ;
-
-
+ 
+    
 const app = express();
  
 const secretKey = process.env.SECRET_KEY || 'REVIVE';
@@ -224,28 +224,13 @@ app.get("/bindirection/library",async(req,res)=>{
 app.get("/feedback",async(req,res)=>{
     const feedbackdata = await feedbackmodel.find().sort({_id:-1}).exec();
     res.render("feedback",{feedbackdata:feedbackdata});
-}) 
-app.get("/binfinder",async(req,res)=>{
+})  
+app.get("/request",async(req,res)=>{
     
-    const soildatas = await savemodel.find().sort({_id:-1}).exec();
-    const bindata = await testmodel.find();
-    const canteen = bindata.map(bindata => bindata.canteen);
-    const ground = bindata.map(bindata => bindata.ground);
-    const portico = bindata.map(bindata => bindata.portico);
-    const library = bindata.map(bindata => bindata.library);
-    const auditorium = bindata.map(bindata => bindata.auditorium);
     
-   
     if(req.cookies.token){
 
-        res.render("binfinder", {
-            soildatas: soildatas,
-            canteen:canteen,
-            ground:ground,
-            portico:portico,
-            library:library,
-            auditorium:auditorium,
-        });
+        res.render("request");
     }else{
 
         res.render("index");
