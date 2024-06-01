@@ -917,7 +917,7 @@ form .btn2:hover{
     }
     .visit-schedule{
         display: grid;
-        grid-template-columns: auto 60%;
+        grid-template-columns: auto 56%;
         width: 320px;
         padding: 5px;
       
