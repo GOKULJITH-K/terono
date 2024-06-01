@@ -225,18 +225,54 @@ app.get("/feedback",async(req,res)=>{
     const feedbackdata = await feedbackmodel.find().sort({_id:-1}).exec();
     res.render("feedback",{feedbackdata:feedbackdata});
 })  
-app.get("/request",async(req,res)=>{
+app.get("/invoice",async(req,res)=>{
     
     
     if(req.cookies.token){
 
-        res.render("request");
+        res.render("invoice");
     }else{
 
         res.render("index");
     }
     
 })  
+app.get("/receipt",async(req,res)=>{
+    
+    
+    if(req.cookies.token){
+
+        res.render("receipt");
+    }else{
+
+        res.render("index");
+    }
+    
+}) 
+app.get("/statement",async(req,res)=>{
+    
+    
+    if(req.cookies.token){
+
+        res.render("statement");
+    }else{
+
+        res.render("index");
+    }
+    
+}) 
+app.get("/visit",async(req,res)=>{
+    
+    
+    if(req.cookies.token){
+
+        res.render("visit");
+    }else{
+
+        res.render("index");
+    }
+    
+}) 
 app.get("/selection",async(req,res)=>{
 
     if(req.cookies.token){
