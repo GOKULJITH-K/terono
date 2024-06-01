@@ -6,15 +6,14 @@
   position: fixed;
   bottom: 10px;
   right: 10px;
-  z-index: 5;
+  z-index: 200;
   border: none;
   outline: none;
-  background-color: #1d1233;
-  color: white;
+  background-color: #0acc78;
   cursor: pointer;
   padding: 10px;
   font-size: 15px;
-  border-radius: 4px;
+  
 }
 
 #myBtn2 {
@@ -24,12 +23,11 @@
   z-index: 5;
   border: none;
   outline: none;
-  background-color: #1d1233;
-  color: white;
+  background-color: #0acc78;
   cursor: pointer;
   padding: 10px;
   font-size: 15px;
-  border-radius: 4px;
+  
 }
 
 #myBtn:hover {
@@ -46,41 +44,72 @@
     z-index:5;
     border: none;
     outline: none;
-    background-color: #1d1233;
-    color:white;
+    background-color: #0acc78;
     cursor: pointer;
     writing-mode: vertical-rl;
     font-family: system-ui;
     font-weight: 600;
     padding: 15px;
     font-size: 15px;
-    border-radius: 4px;
+    
   }
   #myBtn2 {
     position: fixed;
     left: 0%;
     bottom: 0%;
     right: 0%;
-    z-index:100;
+    z-index:200;
     display: flex;
     justify-content: space-evenly;
     border: none;
     outline: none;
-    background-color: #1d1233;
-    color:white;
+    background-color: #0acc78;
     cursor: pointer;
     font-family: system-ui;
     font-weight: 600;
-    padding: 15px;
+    padding: 5px ;
     font-size: 15px;
-    border-radius: 30px 30px 0 0;
+    
   
   }
   #myBtn2 a{
     text-decoration: none;
     color: white;
+    align-self: center;
+    padding-top: 5px;
+    
   }
-  
+  .topbtn2 p{
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px;
+   
+  }
+  .topbtn2 i{
+    text-align: center;
+    font-size: 22px;
+  }
+  .topbtn3 i{
+    text-align: center;
+    font-size: 18px;
+  }
+  .topbtn3 {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .topbtn3 p{
+    font-size: 11px;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #morebtn{
+    font-size: 23px;
+    padding-bottom: 5px;
+  }
+  .topbtn2 {
+    display: grid;
+    grid-template-columns: auto;
+  }
   .icons-header{
  
 
