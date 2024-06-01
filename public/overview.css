@@ -11,16 +11,8 @@
   width: auto;
   height: 30px;
 }
-nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 100%;
-  background: white;
-  
-  
-}
+
+
 nav .navbtn{
   margin: 20px;
   top:10;
