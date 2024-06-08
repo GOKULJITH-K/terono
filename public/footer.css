@@ -19,7 +19,8 @@
     margin-bottom: 0%;
     padding: 0px 100px;
     box-sizing: border-box;
-    transition: .5s;  
+    transition: .5s; 
+     
     
   
     
@@ -83,7 +84,7 @@
     padding: 20px 10px;
     box-sizing: border-box;
     transition: .5s;  
-    
+    text-align: left;
   
     
   }

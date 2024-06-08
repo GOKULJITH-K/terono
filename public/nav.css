@@ -16,6 +16,8 @@
   
 }
 
+/* welcome page */
+
 #myBtn2 {
   position: fixed;
   bottom: 50px;
@@ -34,7 +36,7 @@
   background-color: #4c0db1 ;
 }
 @media only screen and (max-width:800px) {
-
+  
   #myBtn {
     display: none;
     position: fixed;
@@ -53,6 +55,7 @@
     font-size: 15px;
     
   }
+  /* welcome page */
   #myBtn2 {
     position: fixed;
     left: 0%;
@@ -67,7 +70,6 @@
     cursor: pointer;
     font-family: system-ui;
     font-weight: 600;
-    padding: 5px ;
     font-size: 15px;
     
   
@@ -128,6 +130,9 @@
       cursor: pointer;
 
   }
+  
+  /* welcome page */
+
   .header .icons-header a{
     text-decoration: none;
     color: white;

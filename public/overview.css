@@ -11,7 +11,7 @@
   width: auto;
   height: 30px;
 }
-
+  
 
 nav .navbtn{
   margin: 20px;
@@ -276,9 +276,9 @@ nav .navbtn{
     }
     
     
-   
+  /* welcome page */ 
   
-    #sidemenu2 {
+  #sidemenu2 {
       position: fixed;
       bottom: -100%; 
       left: 0;

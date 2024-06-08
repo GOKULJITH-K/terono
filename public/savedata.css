@@ -7,48 +7,120 @@
 }
 .header{
  
-  height: 180px;
+  height: 130px;
   background-size: cover;
   position: relative;
   width: 100%;
   
 }
-svg{
-display: none;
-}
-nav{
+.save-delete{
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
+  flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
-  background: white;
-  
-  
 }
-
-.selection{
-  background: #ace0f9 ;
-  display: flex;
-  margin: 0 65px;
+.delete {
+  padding: 19px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: auto;
+  flex-basis: 15%;
   border-radius: 10px;
-  justify-content: space-around;
   cursor: pointer;
+  color: white;
+  background:linear-gradient(#251742,#482b7c) ;
+  border: none;
+}
+.delete i{
   
+  color: white;
+  font-size: 18px;
+  align-items: center;
+  text-align: center;
+}
+#overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1233c8;
+  z-index: 99;
+  display: none;
+}
+.popup-content{
+  padding: 10px;
+  margin: 10px;
+}
+.popup-inner a{
+  text-decoration: none;
+  color: black;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.popup-inner i{
+  
+  color: #1d1233;
+  font-size: 16px;
+}
+.popup-onload{
+  margin: 0 auto;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  margin-top: -130px;
+  margin-left: -250px;
+}
+.popup-inner{
+  width: 500px;
+  z-index: 101;
+  background:linear-gradient(#25174280,#482b7c) ;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+
+}
+.popup-inner p{
+  color: white;
+  padding: 5px;
+}
+.popup-inner h2{
+  color: white;
+  padding: 10px;
 }
 
-.selection a{
-  color: black;
-  font-size: 18px;
-  padding: 10px;
-  width: 90%;
-  border-radius: 10px;
-  font-family: 'Montserrat', sans-serif;
+.alert-description{
+  display: block;
+  font-size: 16px;
+    padding: 10px;
+    margin: 0px;
+    font-family:system-ui;
+    text-align: left;
+   
+
 }
+
+.alert-description li{
+  
+    font-size: 20px;
+    padding: 5px;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    color: white;
+    list-style-type: disc;
+    
+
+}
+
 .logo{
   margin: 35px 80px;
   top:10px;
-  right:10px;
+  left:10px;
   position: absolute;
 }
 .logo span{
@@ -61,21 +133,27 @@ nav{
  
   position: absolute;
 }
-.demo-para{
-  display: none;
-}
 .logo img{
  
   width: 35px;
   height: 35px;
 }
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  background: white;
+  
+  
+}
 nav .navbtn{
   margin: 20px;
-  top:10px;
-  right:50px;
+  top:10;
+  right:10;
   position: absolute;
 }
-
 nav .hero-btn2{
   display: inline-block;
   text-decoration: none;
@@ -155,12 +233,75 @@ nav ul{
 }
 
 
+.overview{
+  width: auto;
+  padding: 0 20;
+ text-align: center;
+
+  
+}
+.view-change{
+  display: inline;
+}
+svg{
+  display: none;
+}
+
+.overview .row{
+  margin-top: 0%;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.overview-col{
+  padding: 0px 150px 15px 150px;
+  text-align: center;
+  
+ 
+}
+.overview h1{
+  
+  font-size: 50px;
+  text-align: center;
+  padding: 18px 0;
+}
+.overview-col p{
+  font-size: 25px;
+  padding: 25px;
+  font-family:system-ui;
+  color: rgb(31, 30, 30);
+
+}
+.overview-btn{
+  
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgb(4, 54, 74);
+  padding: 14px 34px;
+  font-size: 18px;
+  border-radius: 30px;
+  background: rgb(4, 54, 74);
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  
+  
+ 
+}
+.overview-btn:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.overview svg{
+  display: none;
+}
 
 
 .contact{
-  width: auto;
-  padding: 0 100 80 100;
+  padding: 10 50;
  text-align: center;
+ 
 
 
 
@@ -172,30 +313,57 @@ nav ul{
   justify-content: space-around;
   
 }
-.contact h3{
-display: none;
-}
-.login-para{
-display: none;
-}
-.login-label{
-display: none;
-}
-.invalid-credential{
-display: none;
-}
-
 .contact-col{
-  margin: 10px;
-  padding: 10px  20px;
+  margin: 20px 20px;
+  padding: 20px  40px;
   flex-basis: 50%;
   text-align: center;
   border-radius: 10px;
   
  
 }
+.savedata{
+
+  box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.3); 
+  
+}
+.contact h1{
+  font-size: 35px;
+  margin: 10px ;
+  padding: 10px;
+}
+.image{
+  padding:20px;
+}
+.data {
+  color: black;
+  padding: 10px 60px;
+  border-radius: 10px;
+  margin: 0 10px;
+  text-align: left;
+  
+ 
+ }
+ svg{
+  margin: 10px auto;
+  padding: 10px auto;
+  height: 500px ;
+  width: 500px;
+ }
+ .data img{
+  height: 230px;
+  width: 230px;
+  border-radius: 10px;
+ }
+.data p{
+  font-size: 18px;
+  padding: 10px;
+ 
+     
+}
+
 .contact .newlogin{
- background: linear-gradient(#4c0db1,#482b7c);
+  background:linear-gradient(#251742,#482b7c) ;
 }
 .contact-col h1{
 
@@ -206,7 +374,7 @@ display: none;
 }
 .contact-col p{
   font-size: 20px;
-  padding: 25px;
+  padding: 25px 25px;
   text-align: justify;
   font-family:system-ui;
   color: white;
@@ -220,13 +388,12 @@ form input,form textarea{
   width: 80%;
   border: 0;
   outline: none;
-  border: 1px solid #482b7c;
+  border-bottom: 1px solid black;
   padding: 15px;
   margin: 15px 0;
-  color:#251742;
-  background: none;
+  color:black;
   font-size: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   
 }
 
@@ -236,16 +403,37 @@ form .btn2{
   font-weight: 500;
   margin-top: 20px;
   width: 80%;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   color: white;
   background:linear-gradient(#251742,#482b7c) ;
   border: none;
 }
+
 form .btn2:hover{
   background: white;
   color: black;
   border: 1px solid black;
+}
+
+.savedata{
+
+  box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.3); 
+  
+  
+}
+.file-upload{
+  background: #1d1233;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  margin: 10px 25%;
+  text-align: center;
+  
+  
+  
 }
 
 #entry{
@@ -254,20 +442,34 @@ form .btn2:hover{
 
 @media(max-width:800px){
 
-
-  body{
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  }
   .header{
- 
-      height: 60px;
-  }
-  .logo{
-    margin:15px;
-    top:10px;
-    right:10px;
-    position: absolute;
+    background-image:linear-gradient(to bottom, rgba(14, 13, 13, 0.838) 15%,transparent 90%),url(store.jpg);
+    height: 150px;
+    
+    
+}
+.save-delete{
+  display: grid;
+  grid-template-columns: 80% 20%;
+  gap: 5px;
+}
+.popup-onload{
+  margin: 0 auto;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 10%;
+  top: 20%;
+}
+.popup-inner{
+  width: 90%;
+}
 
+  .logo{
+    margin: 15px;
+    top:10px;
+    left:10px;
+    position: absolute;
   }
   .logo img{
    
@@ -300,6 +502,7 @@ form .btn2:hover{
       
     
   }
+
   
   .text-box p{
       color: white;
@@ -314,6 +517,53 @@ form .btn2:hover{
       
       flex-direction: column;
   }
+  .overview{
+    width: auto;
+    padding: 0;
+   text-align: center;
+  
+    
+}
+
+.overview-col{
+    padding: 5px;
+    text-align: center;
+    
+   
+}
+.overview h1{
+    
+    font-size: 25px;
+    text-align: center;
+    padding: 18px 0;
+}
+.overview-col p{
+    font-size: 16px;
+    padding: 25px;
+    font-family:system-ui;
+    text-align: center;
+    
+  
+}
+
+  svg{
+    height: 310px;
+    width: 310px;
+    padding: 0px;
+    margin: 0;
+   }
+   .overview svg{
+    display: inline;
+  }
+  .contact svg{
+    display: none;
+  }
+   .view-desk{
+    display: none;
+   }
+   .view-change{
+    display: inline;
+   }
   .text-box .hero-btn{
       
       padding: 16px 32px 16px 12px;
@@ -344,160 +594,52 @@ form .btn2:hover{
  
   
   .contact{
-      width: auto;
-      padding: 0 5 50 5;
-      height: 100nvh;
-     text-align: center;
     
-    
+    padding: 10;
+   text-align: center;
   
-    
-      
-  }
-  .contact .row{
-      margin-top: 0%;
-      display: flex;
-      justify-content: space-around;
-      
-  }
-  .contact-col{
-      margin: 0px;
-      padding: 0px 10px;
-      
-      
-     
-  }
-  .selection{
-    background: #ace0f9 ;
-    display: flex;
-    margin: 0 15px;
-    border-radius: 10px;
-    justify-content: space-around;
-    cursor: pointer;
-    
-  }
-  
-  .selection a{
-    color: black;
-    font-size: 18px;
-    padding: 10px;
-    width: 100%;
-    border-radius: 10px;
-    font-family: 'Montserrat', sans-serif;
-  }
-  .login-label{
-    text-align: left;
-    display: block;
-    font-size: 15px;
-    padding: 0 5px;
-    margin:  0 15px;
-    color: #251742;
-  }
-  .login-pass{
-    margin-top: 10px;
-  }
-  .invalid-credential{
-    background: rgb(219, 4, 4);
-    border-radius: 10px;
-    text-align: center;
-    display: block;
-    padding: 0px ;
-    font-size: 13px;
-    margin: 0 20px;
-    margin-bottom: 15px;
-    cursor: pointer;
 
+  
     
-  }
-  
-  .invalid-credential i {
-    padding-left: 15px ;
-
-  }
-  svg{
-    display: inline;
-    width: 250px;
-    height: 250px;
-  
-  }
-  
-  .contact-col p{
-    font-size: 18px;
-    padding: 10px;
-    font-family:system-ui;
-    color: black;
-    border-radius: 0px;
-    margin-top: 0px;
-    
-  
 }
-  .contact-col h1{
-      display: none;
-  
-  }
-  .contact-col h3{
-    color: black;
-    display: block;
-    font-weight: 200;
-    font-size: 25px;
-    position: relative;
-    text-align: left;
+.contact .contact-row{
+    
+    margin: 10px ;
+    width: 90%;
+    
+    
+}
+.contact h1{
+    font-size: 30px;
+    margin: 10px ;
     padding: 10px;
-    margin: 10px;
-  }
-  .login-para {
-    color: black;
-    display: block;
-    font-weight: 300;
-    font-size: 20px;
-    position: relative;
-    text-align: left;
-    padding: 10px;
-    margin: 10px;
-  }
-  .newlogin {
-    visibility: hidden;
-    display: none;
-  }
-  
+}
+.contact-col{
+  margin: 0px;
+  padding: 10px ;
+  flex-basis: 50%;
+  text-align: center;
+  border-radius: 10px;
   
  
-  .contact h1{
-      
-      font-size: 40px;
-      text-align: center;
-      padding: 40px 15px;
-  }
-  .contact form input{
-     
-     
-      
-      width: 90%;
-      background: #171d4214;
-  }
-  .contact form textarea{
-    
-      width: 90%;
+}
 
-  }
-  .contact form .btn2{
-      padding: 10px ;
-      margin-top: 30px;
-      font-size: 20px;
-      font-weight: 300;
-      font-family: system-ui;
-      width: 90%;
-     
-  }
+.data {
+  color: black;
+  padding: 30px;
+  
+ 
+ }
+
   nav ul{
-      display: block;
+      display: none;
     }
     nav .fa-solid{
       display: block;
       font-size: 25px;
       margin: 30px;  
       padding-left: 80%; 
-      color: black;
+      color: white;
       z-index: 1;
       cursor: pointer;
   }
@@ -514,7 +656,7 @@ form .btn2:hover{
     display: none;
   }
   nav ul{
-      background:linear-gradient(#251742,#482b7c) ;
+    
       position: fixed;
       top: 0;
       right: -80%;
@@ -581,6 +723,7 @@ form .btn2:hover{
   nav ul li :hover{
  
     color: black;
+    color: rgb(207, 4, 4);
   }
   nav ul li a{
        color: white;
@@ -602,50 +745,64 @@ form .btn2:hover{
     padding-top: 60px;
   }
   
-  .contact form input{
-     
-     
-      
-    width: 90%;
-    height: 40px;
-    font-size: 15px;
-    padding: 20px;
-    margin: 10px;
-    border: 2px solid #482b7c;
-    border-radius: 5px;
+  form input,form textarea{
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    color: #1d1233;
+    background: rgb(247, 243, 243);
     
-}
-
-
-
-.contact form .btn1{
-    padding: 15px;
-    margin: 20px;
-    font-size: 20px;
-    font-weight: 300;
-    font-family: system-ui;
-    width: 90%;
-    border-radius: 10px;
-   
-}
-  form .btn1:hover{
-    background: black;
-    color: white;
-    
+  
   }
+  
+  form .btn2{
+    width: 100%;
+   }
+   .data{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+   }
+   .savedata{
+    padding: 0 15px;
+   }
+   .alert-description{
+    display: block;
+    font-size: 16px;
+      padding: 10px;
+      margin: 0px;
+      font-family:system-ui;
+      text-align: left;
+     
+
+  }
+  
+  .alert-description li{
     
+      font-size: 18px;
+      padding: 5px;
+      font-family:'Montserrat', sans-serif;
+      font-weight: 500;
+      text-align: left;
+      color: white;
+      list-style-type: disc;
+      
+
+  }
+ 
   
-  
-  
+      
 }
 
-/* This is the css property for savedata  */
 .data p{
 color: black;
 font-size: 15px;
 padding: 5px;
 margin: 10px;
 }
+
+
 
 
 
