@@ -101,6 +101,39 @@ app.get("/weather",(req,res)=>{
         res.render("index");
     } 
 })
+app.get("/profile",(req,res)=>{
+
+    if(req.cookies.token){
+
+        res.render("profile");
+
+    }else{
+
+        res.render("index");
+    } 
+})
+app.get("/about",(req,res)=>{
+
+    if(req.cookies.token){
+
+        res.render("about");
+
+    }else{
+
+        res.render("index");
+    } 
+}) 
+app.get("/contact",(req,res)=>{
+
+    if(req.cookies.token){
+
+        res.render("contact");
+
+    }else{
+
+        res.render("index");
+    } 
+})
 app.get("/crop",async(req,res)=>{
     const testdata = await testmodel.find().sort({_id:-1}).limit(15).exec();
 
@@ -145,7 +178,7 @@ app.get("/crop",async(req,res)=>{
     }
    
 })
-app.get("/platformx",async(req,res)=>{
+app.get("/complaint",async(req,res)=>{
     const testdata = await testmodel.find().sort({_id:-1}).limit(30).exec();
 
     const nitrogenval=testdata.map(soil=>soil.nitrogen);
@@ -170,7 +203,7 @@ app.get("/platformx",async(req,res)=>{
     const electrical_conductivity=Number(mode(electrical_conductivityVal));
     if(req.cookies.token){
 
-        res.render("platformx",{
+        res.render("complaint",{
             nitrogen:nitrogen,
             phosphorous:phosphorous,
             potassium:potassium,
@@ -235,7 +268,7 @@ app.get("/invoice",async(req,res)=>{
 
         res.render("index");
     }
-    
+      
 })  
 app.get("/receipt",async(req,res)=>{
     
@@ -243,6 +276,18 @@ app.get("/receipt",async(req,res)=>{
     if(req.cookies.token){
 
         res.render("receipt");
+    }else{
+
+        res.render("index");
+    }
+    
+}) 
+app.get("/request",async(req,res)=>{
+    
+    
+    if(req.cookies.token){
+
+        res.render("request");
     }else{
 
         res.render("index");
@@ -434,284 +479,9 @@ app.get("/selection/:id",async(req,res)=>{
      
 })
 
-app.get("/archive/:id",async(req,res)=>{
-    
-    let id=req.params.id;
-    
-    const soildatas = await savemodel.findById(id);
-    const nitrogen = soildatas.nitrogen;
-    const phosphorous = soildatas.phosphorous;
-    const potassium = soildatas.potassium;
-    const ph = soildatas.ph;
-    const temperature = soildatas.temperature;
-    const humidity = soildatas.humidity;
-    const electrical_conductivity = soildatas.electrical_conductivity;
 
-    if (nitrogen> 300) {
-        nitrogenmsg = `Value of nitrogen is higher than optimum value. We can find
-         that the soil contains an excess quantity of nutrients for vegetable cultivation, we should maintain the ratio of npk.value is ${nitrogen}`;
-    }
-    else if (nitrogen> 201 && nitrogen< 300 ) {
-        nitrogenmsg = `Value of nitrogen is optimum for vegetable cultivation.value is ${nitrogen}`;
-
-    }else if (nitrogen> 101 && nitrogen< 150){
-        nitrogenmsg = `Value of nitrogen is optimum for Field crop cultivation.value is ${nitrogen}`;
-    } 
-      else if(nitrogen> 150 && nitrogen< 200){
-       nitrogenmsg = `We can find that the soil does not have an adequate quantity of nutrients for vegetable cultivation. 
-       We can find that the soil contains an excess quantity of nutrients for field crop cultivation, we should maintain the ratio of npk.value is ${nitrogen}` ;
-    } else{
-      nitrogenmsg = `value of nitrogen is lower than optimum value for field crop cultivation and vegetable crop cultivation.value is ${nitrogen}`
-    }
-
-    if (phosphorous> 90) {
-        phosphorusmsg = `Value of phosphorus is higher than optimum value. We can find
-        that the soil contains an excess quantity of nutrients for vegetable cultivation, we should maintain the ratio of npk.Value is ${phosphorous}`;
-    }else if (phosphorous> 61 && phosphorous< 90 ) {
-        phosphorusmsg = `Value of phosphorus is optimum for vegetable cultivation.Value is ${phosphorous}`;
-
-    }else if (phosphorous> 11 && phosphorous< 20){
-        phosphorusmsg = `Value of phosphorus is optimum for Field crop cultivation.Value is ${phosphorous}`;
-    } 
-    else if(phosphorous> 20 && phosphorous< 61){
-        phosphorusmsg = `We can find that the soil does not have an adequate quantity of nutrients for vegetable cultivation. 
-        We can find that the soil contains an excess quantity of nutrients for field crop cultivation, we should maintain the ratio of npk.Value is ${phosphorous}` ;
-    } else{
-        phosphorusmsg = `value of phosphorus is lower than optimum value for field crop cultivation and vegetable crop cultivation.Value is ${phosphorous}`
-    }
-
-    if (potassium> 240) {
-        potassiummsg = `Value of potassium is higher than optimum value. We can find
-        that the soil contains an excess quantity of nutrients for vegetable cultivation, we should maintain the ratio of npk.Value is ${potassium}`;
-    }else if (potassium> 161 && potassium< 240 ) {
-        potassiummsg = `Value of potassium is optimum for vegetable cultivation.Value is ${potassium}`;
-
-    }else if (potassium> 101 && potassium< 150){
-        potassiummsg = `Value of potassium is optimum for Field crop cultivation.Value is ${potassium}`;
-    } 
-      else if(potassium> 150 && potassium< 161){
-        potassiummsg = `We can find that the soil does not have an adequate quantity of nutrients for vegetable cultivation. 
-        We can find that the soil contains an excess quantity of nutrients for field crop cultivation, we should maintain the ratio of npk.Value is ${potassium}` ;
-    } else{
-        potassiummsg = `value of potassium is lower than optimum value for field crop cultivation and vegetable crop cultivation.Value is ${potassium}`
-    }
-
-    if (ph > 7.5) {
-        pHmsg = `Should decrease the amount of pH.Value is ${ph}`;
-    }else if (ph> 6.6 && ph< 7.5 ) {
-        pHmsg = `Perfect range for plant growth and planting'.Value is ${ph}`;
-
-    }else {
-        pHmsg = `Should increase the amount of pH.Value is ${ph}`
-    }
-
-    if (temperature> 30) {
-        temperaturemsg = `It is not the perfect range for nitrification, plant growth, and planting.Value is ${temperature}`;
-    }else if (temperature> 19 && temperature< 30 ) {
-        temperaturemsg = `Perfect range of nitrification, plant growth, and planting.Value is ${temperature}`;
-
-    }else {
-
-        temperaturemsg = `value is lower than optimum value for plant growth.Value is ${temperature}`
-    }
-    if (humidity > 90) {
-        humiditymsg = `It is not the perfect range for nitrification, plant growth, and planting.Value is ${humidity}`;
-    }else if (humidity >  70 && humidity < 90 ) {
-        humiditymsg = `Perfect range of nitrification, plant growth, and planting.Value is ${humidity}`;
-
-    }else {
-
-        humiditymsg = `value is lower than optimum value for plant growth.Value is ${humidity}`
-    }
-    if (electrical_conductivity > 2) {
-        electrical_conductivitymsg = `It is not the perfect range for nitrification, plant growth, and planting.Value is ${electrical_conductivity}`;
-    }else if (electrical_conductivity> 1 && electrical_conductivity < 2 ) {
-        electrical_conductivitymsg = `Perfect range of nitrification, plant growth, and planting.Value is ${electrical_conductivity}`;
-
-    }else {
-
-        electrical_conductivitymsg= `value is lower than optimum value for plant growth.Value is ${humidity}`
-    }
-
-
-    console.log(nitrogen);  
-       
-    if(req.cookies.token){
-
-        res.render("archive",
-        {
-            nitrogenmsg:nitrogenmsg,
-            phosphorusmsg:phosphorusmsg,
-            potassiummsg:potassiummsg,
-            pHmsg:pHmsg,
-            temperaturemsg:temperaturemsg,
-            humiditymsg:humiditymsg,
-            electrical_conductivitymsg:electrical_conductivitymsg,
-            nitrogen:nitrogen,
-            phosphorous:phosphorous,
-            potassium:potassium,
-            ph:ph,
-            temperature:temperature,
-            humidity:humidity,
-            electrical_conductivity:electrical_conductivity,
-       });
-        
-    }else{
-
-        res.render("index");
-    }
-
-            
-        
-
-
-})
   
 //
-app.get("/analysis",async(req,res)=>{
-    
-    const testdata = await testmodel.find().sort({_id:-1}).limit(15).exec();
-
-    const nitrogenval=testdata.map(soil=>soil.nitrogen);
-    const nitrogen=Number(mode(nitrogenval));
-
-    const phosphorusval=testdata.map(soil=>soil.phosphorous);
-    const phosphorous=Number(mode(phosphorusval));
-
-    const potassiumval=testdata.map(soil=>soil.potassium);
-    const potassium=Number(mode(potassiumval));
-
-    const pHval=testdata.map(soil=>soil.ph);
-    const ph=Number(mode(pHval));
-
-    const temperatureval=testdata.map(soil=>soil.temperature);
-    const temperature=Number(mode(temperatureval));
-
-    const humidityval=testdata.map(soil=>soil.humidity);
-    const humidity=Number(mode(humidityval));
-        
-    const electrical_conductivityVal=testdata.map(soil=>soil.electrical_conductivity);
-    const electrical_conductivity=Number(mode(electrical_conductivityVal));
-    
-    // processing nitrogen
-    
-    if (nitrogen> 300) {
-        nitrogenmsg = `Value of nitrogen is higher than optimum value. We can find
-         that the soil contains an excess quantity of nutrients for vegetable cultivation, we should maintain the ratio of npk.value is ${nitrogen}`;
-    }else if (nitrogen> 201 && nitrogen< 300 ) {
-        nitrogenmsg = `Value of nitrogen is optimum for vegetable cultivation.value is ${nitrogen}`;
-
-    }else if (nitrogen> 101 && nitrogen< 150){
-        nitrogenmsg = `Value of nitrogen is optimum for Field crop cultivation.value is ${nitrogen}`;
-    } 
-    else if(nitrogen> 150 && nitrogen< 200){
-       nitrogenmsg = `We can find that the soil does not have an adequate quantity of nutrients for vegetable cultivation. 
-       We can find that the soil contains an excess quantity of nutrients for field crop cultivation, we should maintain the ratio of npk.value is ${nitrogen}` ;
-    } else{
-      nitrogenmsg = `value of nitrogen is lower than optimum value for field crop cultivation and vegetable crop cultivation.value is ${nitrogen}`
-    }
-
-    if (phosphorous> 90) {
-        phosphorusmsg = `Value of phosphorus is higher than optimum value. We can find
-        that the soil contains an excess quantity of nutrients for vegetable cultivation, we should maintain the ratio of npk.Value is ${phosphorous}`;
-    }else if (phosphorous> 61 && phosphorous< 90 ) {
-        phosphorusmsg = `Value of phosphorus is optimum for vegetable cultivation.Value is ${phosphorous}`;
-
-    }else if (phosphorous> 11 && phosphorous< 20){
-        phosphorusmsg = `Value of phosphorus is optimum for Field crop cultivation.Value is ${phosphorous}`;
-    } 
-      else if(phosphorous> 20 && phosphorous< 61){
-        phosphorusmsg = `We can find that the soil does not have an adequate quantity of nutrients for vegetable cultivation. 
-        We can find that the soil contains an excess quantity of nutrients for field crop cultivation, we should maintain the ratio of npk.Value is ${phosphorous}` ;
-    } else{
-        phosphorusmsg = `value of phosphorus is lower than optimum value for field crop cultivation and vegetable crop cultivation.Value is ${phosphorous}`
-    }
-
-    if (potassium> 240) {
-        potassiummsg = `Value of potassium is higher than optimum value. We can find
-        that the soil contains an excess quantity of nutrients for vegetable cultivation, we should maintain the ratio of npk.Value is ${potassium}`;
-    }else if (potassium> 161 && potassium< 240 ) {
-        potassiummsg = `Value of potassium is optimum for vegetable cultivation.Value is ${potassium}`;
-
-    }else if (potassium> 101 && potassium< 150){
-        potassiummsg = `Value of potassium is optimum for Field crop cultivation.Value is ${potassium}`;
-    } 
-      else if(potassium> 150 && potassium< 161){
-        potassiummsg = `We can find that the soil does not have an adequate quantity of nutrients for vegetable cultivation. 
-        We can find that the soil contains an excess quantity of nutrients for field crop cultivation, we should maintain the ratio of npk.Value is ${potassium}` ;
-    } else{
-        potassiummsg = `value of potassium is lower than optimum value for field crop cultivation and vegetable crop cultivation.Value is ${potassium}`
-    }
-
-    if (ph> 7.5) {
-        pHmsg = `Should decrease the amount of pH.Value is ${ph}`;
-    }else if (ph> 6.6 && ph< 7.5 ) {
-        pHmsg = `Perfect range for plant growth and planting'.Value is ${ph}`;
-
-    }else {
-        pHmsg = `Should increase the amount of pH.Value is ${ph}`
-    }
-
-    if (temperature> 30) {
-        temperaturemsg = `It is not the perfect range for nitrification, plant growth, and planting.Value is ${temperature}`;
-    }else if (temperature> 19 && temperature< 30 ) {
-        temperaturemsg = `Perfect range of nitrification, plant growth, and planting.Value is ${temperature}`;
-
-    }else {
-
-        temperaturemsg = `value is lower than optimum value for plant growth.Value is ${temperature}`
-    }
-    if (humidity > 90) {
-        humiditymsg = `It is not the perfect range for nitrification, plant growth, and planting.Value is ${humidity}`;
-    }else if (humidity >  70 && humidity < 90 ) {
-        humiditymsg = `Perfect range of nitrification, plant growth, and planting.Value is ${humidity}`;
-
-    }else {
-
-        humiditymsg = `value is lower than optimum value for plant growth.Value is ${humidity}`
-    }
-    if (electrical_conductivity > 2) {
-        electrical_conductivitymsg = `It is not the perfect range for nitrification, plant growth, and planting.Value is ${electrical_conductivity}`;
-    }else if (electrical_conductivity > 1 && electrical_conductivity< 2 ) {
-        electrical_conductivitymsg = `Perfect range of nitrification, plant growth, and planting.Value is ${electrical_conductivity}`;
-
-    }else {
-
-        electrical_conductivitymsg= `value is lower than optimum value for plant growth.Value is ${humidity}`
-    }
-
-
-    console.log(nitrogen);  
-       
-    if(req.cookies.token){
-
-        res.render("analysis",
-        {
-            nitrogenmsg:nitrogenmsg,
-        phosphorusmsg:phosphorusmsg,
-        potassiummsg:potassiummsg,
-        pHmsg:pHmsg,
-        temperaturemsg:temperaturemsg,
-        humiditymsg:humiditymsg,
-        electrical_conductivitymsg:electrical_conductivitymsg,
-        nitrogen:nitrogen,
-        phosphorous:phosphorous,
-        potassium:potassium,
-        ph:ph,
-        temperature:temperature,
-        humidity:humidity,
-        electrical_conductivity:electrical_conductivity,
-       });
-      
-    }else{
-
-        res.render("index");
-    }
-
-            
-       
-  
-});    
 
  
 function mode(array){
