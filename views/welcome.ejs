@@ -1,5 +1,5 @@
 <html>
-     <head>
+    <head>
          <meta name="viewport" content="width=device-width,initial-scale=1.0">
          <title>TELINSO</title>
          
@@ -7,7 +7,6 @@
          <link rel="stylesheet" href="/overview.css">
          <link rel="stylesheet" href="/nav.css">
          <script src="/navbar.js" defer></script>
-         <link rel="stylesheet" href="/footer.css">
          <link rel="preconnect" href="https://fonts.googleapis.com">
          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
          <script src="https://kit.fontawesome.com/01780eab25.js" crossorigin="anonymous"></script>
@@ -15,16 +14,10 @@
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
-        
-        </head>
-     <body>
+    </head>
+    <body>
+       
         <div id="sidemenu2">
-                 
-            <p>Request</p>
-            <a href="/collection"><i class="fa-solid fa-circle-check"></i> Collection </a>
-            <a href="/selling"><i class="fa-solid fa-square-check"></i> Selling </a>
-           
 
             <p>Support</p>
             <a href="tel:+919447140767"><i class="fa-solid fa-headset"></i> Contact Us  </a>
@@ -32,135 +25,128 @@
           </div>
         
         <div id="myBtn2">
-          
+
             <a  href="/" class="topbtn3" title="more"><i class="fa-solid fa-house"></i>  <p>Home</p></a>  
-            <a  href="/request" class="topbtn3" title="more"><i class="fa-solid fa-user"></i><p>Profile</p></a>
+            <a  href="/profile" class="topbtn3" title="more"><i class="fa-solid fa-user"></i><p>Profile</p></a>
             <a  onclick="notification()" id="morebtn" class="topbtn2" title="more"><i class="fa-solid fa-circle-dot"></i></a>
             <a  href="/visit" class="topbtn3" title="more"><i class="fa-solid fa-book-atlas"></i><p>Visits</p></a>
-            <a href=""  class="topbtn3" title="more"><i class="fa-solid fa-headset"></i><p>Call</p></a>
-        </div>
-     <section class="header" >
-            <div class="container">
-              <nav >
-                <a href="/" class="logo"><img src="/logo.png"></a>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-                <ul id="sidemenu">
-                    
-                    <li ><a style="background: whitesmoke;border-radius: 5px;padding: 5px;"  onclick="closemenu()" style="font-size: 13px;"><i class="fa-solid fa-xmark"></i></a></li>
+            <a href="tel:+919447140767"  class="topbtn3" title="more"><i class="fa-solid fa-headset"></i><p>Call</p></a>
 
-                     <p>General</p>
+        </div>
+
+    <section class="header" >
+            
+        <nav >
+            
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            <ul id="sidemenu">
+                
+                <li ><a style="background: whitesmoke;border-radius: 5px;padding: 5px;"  onclick="closemenu()" style="font-size: 13px;"><i class="fa-solid fa-xmark"></i></a></li>
+
+                    <p>General</p>
                     <li><a href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
                     <li><a href="/"><i class="fa-solid fa-bell"></i> Notification</a></li>
                     <li><a href="/invoice"><i class="fa-solid fa-file-invoice"></i> Invoice </a></li>
                     <li><a href="/receipt"><i class="fa-solid fa-file-invoice-dollar"></i> Receipt </a></li>
                     <li><a href="/statement"><i class="fa-solid fa-receipt"></i> Statement</a></li>
                     <li><a href="/visit"><i class="fa-solid fa-file-waveform"></i> Visits </a></li>
-                    <li><a href="/"><i class="fa-brands fa-algolia"></i> Complaint </a></li>
+                    <li><a href="/complaint"><i class="fa-brands fa-algolia"></i> Complaint </a></li>
                     <li><a href="/request"> <i class="fa-solid fa-truck-fast"></i> Request</a></li>
                     <li><a href="/logout" class="login"><i class="fa-solid fa-right-from-bracket"></i>LogOut</a></li>
                         
-                   <p style="text-align: center;">Terms of Use | Privacy Policy</p>
-                               
-                </ul>
-                
-            </nav>
-    </section>
-   
-    
-
-           <section class="product">
+                <p style="text-align: center;">Terms of Use | Privacy Policy</p>
+                            
+            </ul>
             
-                    <div class="welcome-text">
-                    
-                        <h2 style="font-size: 16px;font-family: 'Montserrat', sans-serif;" id="greeting"></h2>
-                        <h2><span>GOKULJITH</span></h2>
-                        
-                    </div>
-                    <div class="Date-time2">
-                        <div class="balance2">
-                            <p>Balance</p>
-                            <p>$ 0</p>
-                        </div>
-                        <hr>
-                        <div class="balance">
-                            <a  href="/invoice" class="topbtn2 bal1" title="more"><i class="fa-solid fa-file-invoice"></i>  <p>Invoice</p></a> 
-                            <a  href="/receipt" class="topbtn2 bal2" title="more"><i class="fa-solid fa-file-invoice-dollar"></i>  <p>Receipt</p></a> 
-                            <a  href="/" class="topbtn2 bal3" title="more"><i class="fa-solid fa-file-lines"></i>  <p>Wallet</p></a> 
-                            <a  href="/visit" class="topbtn2 bal4" title="more"><i class="fa-solid fa-book-atlas"></i>  <p>Visits</p></a> 
-                        </div>
-                        
-                    </div>
+        </nav>
+
+    </section>
+    <section class="product">
+            
+        <div class="welcome-text">
+        
+            <h2 style="font-size: 16px;font-family: 'Montserrat', sans-serif;" id="greeting"></h2>
+            <h2><span>GOKULJITH</span></h2>
+            
+        </div>
+
+        <div class="Date-time2">
+            <div class="balance2">
+                <p>Balance</p>
+                <p>$ 0</p>
+            </div>
+            <hr>
+            <div class="balance">
+                <a  href="/invoice" class="topbtn2 bal1" title="more"><i class="fa-solid fa-file-invoice"></i>  <p>Invoice</p></a> 
+                <a  href="/receipt" class="topbtn2 bal2" title="more"><i class="fa-solid fa-file-invoice-dollar"></i>  <p>Receipt</p></a> 
+                <a  href="/" class="topbtn2 bal3" title="more"><i class="fa-solid fa-file-lines"></i>  <p>Wallet</p></a> 
+                <a  href="/visit" class="topbtn2 bal4" title="more"><i class="fa-solid fa-book-atlas"></i>  <p>Visits</p></a> 
+            </div>
+            
+        </div>
                  
                 
-               <div class="row1">
-                <a onclick="notification()" id="morebtn"   >
-                    <div class="product-col " >
-                        
-                        <i class="fa-solid fa-truck-fast"></i>
-                            <div>
-                                <h3>Request</h3>
-                                   
-                            </div>
-                                
-                            </div>
-                    </a>
-                   <a href="/" >
-                   <div class="product-col" >
-                       
-                    <i class="fa-brands fa-algolia"></i>
-                            <div>
-                            <h3>Complaint</h3>
-                           
-                            </div>        
-                        
-                               
-                           </div>
-                           </a>
-                           <a href="/" >    
-                            <div class="product-col"  >
-                                <i class="fa-solid fa-headset"></i>
-                                    <div>
-                                    <h3>Contact</h3>
-                                    
-                                    </div>      
-                                        
-                            </div>
-                         </a>   
-                       
-                
-                  
-               </div>
-              <div class="row2">
-               
-              <a href="/" >
-               <div class="product-col"  >
-                <i class="fa-solid fa-user"></i>
+        <div class="row1">
+            <a href="/request" id="morebtn"   >
+                <div class="product-col " >
+                    
+                    <i class="fa-solid fa-truck-fast"></i>
                         <div>
-                        <h3>Profile</h3>
-                        
-                    </div>   
+                            <h3>Request</h3>
+                        </div>
+                </div>
+            </a>
+            <a href="/complaint" >
+                <div class="product-col" >
+                    
+                    <i class="fa-brands fa-algolia"></i>
+                        <div>
+                            <h3>Complaint</h3>
+                        </div>        
+                               
+                </div>
+            </a>
+            <a href="/contact" >    
+                <div class="product-col"  >
+                    <i class="fa-solid fa-headset"></i>
+                        <div>
+                            <h3>Contact</h3>
+                        </div>      
+                                
+                </div>
+            </a>   
+                  
+        </div>
+        <div class="row2">
+               
+            <a href="/profile" >
+               <div class="product-col"  >
+                    <i class="fa-solid fa-user"></i>
+                        <div>
+                            <h3>Profile</h3>
+                        </div>   
                 </div>
             </a>
             <a href="/statement" >    
                 <div class="product-col"  >
                     <i class="fa-solid fa-receipt"></i>
                         <div>
-                        <h3>Statement</h3>
-                       </div>     
+                            <h3>Statement</h3>
+                        </div>     
                             
                 </div>
              </a>  
-             <a href="/" >    
+             <a href="/about" >    
                 <div class="product-col"  >
                     <i class="fa-solid fa-address-book"></i>
                         <div>
-                        <h3>About</h3>
+                            <h3>About</h3>
                         </div>      
                             
                 </div>
              </a>    
-         </div>
-         <div class="Date-time">
+        </div>
+        <div class="Date-time">
             <div class="visit">
                 <div class="visit-schedule">
                     <h6>Visits</h6>
@@ -168,25 +154,23 @@
                 </div> 
                 <p>Last Visit:</p>
                 <p>Estimated Next Visit:</p>
-                
-                
             </div>
-         </div>
-               </section>
+        </div>
+    </section>
               
          
 
-   <script>
+<script>
     
-    var now = new Date();
+    const now = new Date();
   
-    var months = now.toLocaleDateString(undefined, { month: 'long', });
-    var time = now.toLocaleTimeString();
-    var dateNumber = now.getDate();
-    var day = now.toLocaleDateString(undefined, { weekday: 'long' });
+    const months = now.toLocaleDateString(undefined, { month: 'long', });
+    const time = now.toLocaleTimeString();
+    const dateNumber = now.getDate();
+    const day = now.toLocaleDateString(undefined, { weekday: 'long' });
   
-    var hour = now.getHours();
-    var greeting = "";
+    const hour = now.getHours();
+    let greeting = "";
   
     if (hour < 12) {
       greeting = "Good Morning,";
@@ -196,11 +180,10 @@
       greeting = "Good Evening,";
     }
   
-   
     document.getElementById("greeting").innerHTML = greeting;
-    document.getElementById("dateNumber").innerHTML = dateNumber +" "+ months;
+    
    
    
-  </script>
-    </body>
+</script>
+</body>
 </html>
